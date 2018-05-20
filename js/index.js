@@ -394,6 +394,10 @@ let detailRender = (function () {
    }
 })();
 
+$(document).on('touchstart touchmove touchend', (ev) => {
+   ev.preventDefault();
+});
+
 
 //=>开发过程中,由于当前项目版块众多(每一个版块都是一个单例),我们最好规划一种机制:通过标识的判断可以让程序只执行对应版块内容,这样开发哪个版块,我们就把标识改为啥（HASH路由控制）
 let url = window.location.href,//=>获取当前页面的URL地址  location.href='xxx'这种写法是让其跳转到某一个页面
